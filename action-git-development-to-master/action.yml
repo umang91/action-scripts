@@ -1,12 +1,16 @@
 name: 'Merge developement to master Action'
 description: 'Action to merge the development branch to master.'
+inputs:
+  working-directory:
+    description: 'Directory to execute to the script in'
+    required: true
 runs:
   using: "composite"
   steps:
     - name: Merge development to master
       shell: bash
       run: |
-        cd source
+        cd ${{ inputs.working-directory }}
         git fetch
         git checkout main
         git merge development
