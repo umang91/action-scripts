@@ -6,6 +6,7 @@ runs:
     - name: Merge development to master
       shell: bash
       run: |
+        cd source
         git fetch
         #switch to the development branch
         git checkout development
