@@ -11,6 +11,8 @@ runs:
       shell: bash
       run: |
         cd ${{ inputs.working-directory }}
+        git config --global user.name "umang91"
+        git config --global user.email "umang91@users.noreply.github.com"
         echo "switch to the development branch"
         git checkout development
         echo "back merge master to development(mostly a safe check)"
