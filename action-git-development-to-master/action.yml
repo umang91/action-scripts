@@ -11,12 +11,13 @@ runs:
       shell: bash
       run: |
         cd ${{ inputs.working-directory }}
-        #switch to the development branch
+        echo "switch to the development branch"
         git checkout development
-        # back merge master to development(mostly a safe check)
+        echo "back merge master to development(mostly a safe check)"
         git merge origin/main
-        # switch to master and merge development
+        echo "switch to master and merge development"
         git checkout main
+        echo "will merge development"
         git merge development
-        # push merged changes to remote
+        echo "push merged changes to remote"
         git push origin main
